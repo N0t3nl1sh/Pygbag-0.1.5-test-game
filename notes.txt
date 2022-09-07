@@ -1,0 +1,38 @@
+* Your game must have a main.py file! If you have it named to 
+something like game.py hange it to main.py
+
+* If it doesn't detect pygbag you can try it like this:
+python -m pygbag
+
+* Your project folder name cannot contain any spaces if it does have spaces you can convert them to underscores instead
+
+* Do not use .wav files for web, convert them to .ogg instead, If you want to use 
+.wav for desktop you can do this:
+if sys.platform == "emscripten":
+    sound = pygame.mixer.Sound("sound.ogg)
+else: #desktop
+    sound = pygame.mixer.Sound("sound.wav")
+
+* VSCode might think that sys.platform == "emscripten" is not a real thing but 
+it is, its just that vscode doesnt know about this yet
+
+* This is still early in development so expect bugs
+
+* If you have any problems you can go run the game with http://localhost:8000/#debug
+which gives you a debug mode
+
+* You can also go to pygame's discord server and go to pygame-web channel
+
+* If you want to get rid of "This Page is asking you to leave
+- information you've entered may not be saved" question when closing the tab in browsers
+you can add this:
+if sys.platform == "emscripten":
+    import platform
+    platform.window.onbeforeunload = None
+
+* When giving extra arguments give them in the middle, not the start or the end:
+pygbag --archive [Folder] == correct
+pygbag [Folder] --archive == error
+
+You can change the port by adding this argument:
+--port [number]

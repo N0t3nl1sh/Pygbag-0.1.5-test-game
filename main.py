@@ -4,7 +4,6 @@ import random
 
 import asyncio
 
-
 pg.mixer.init()
 pg.font.init()
 
@@ -15,7 +14,7 @@ class Player:
 		self.game = game
 		self.spr = pg.image.load("player.png").convert_alpha()
 		self.rect = pg.rect.Rect(100,100,self.spr.get_width(),self.spr.get_height())
-		self.sound = pg.mixer.Sound("sound.wav")
+		self.sound = pg.mixer.Sound("sound.ogg")
 		self.score = 0
 		self.coinspr = pg.image.load("coin.png").convert_alpha()
 		self.coinrect = pg.rect.Rect(random.randint(40,450),random.randint(40,450),self.coinspr.get_width(),self.coinspr.get_height())
